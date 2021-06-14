@@ -1,0 +1,263 @@
+
+{{>layout/header}}
+</style>
+<header class="bg-dark py-5">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+                    <h1 class="display-5 fw-bolder text-white mb-2">퀀트투자도우미</h1>
+                    <p class="lead text-white-50 mb-4">QIH</p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <!--<a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>-->
+                        <a class="btn btn-outline-light btn-lg px-4" href="javascript:void(window.open('/api/posts/info', '용어설명', 'width=1000, height=1000, toolbar=no, menubar=no, scrollbars=yes, resizable=yes,status=yes'))">
+                        용어 설명
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="bg-light py-5 border-bottom">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">전략 설명</h2>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <!-- Pricing card free-->
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <div class="small text-uppercase fw-bold">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            전략 1
+                        </div>
+                        <div class="mb-3">
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                내재 가치 대비 낮은 가격의 주식이,<br>
+                                내재 가치 대비 비싼 주식보다 <br>
+                                수익률이 높은 현상을 이용하여 <br>
+                                PER, PBR, PCR, PSR 을 이용하여 <br>
+                                전략을 세웠습니다.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Pricing card pro-->
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <div class="small text-uppercase fw-bold">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            전략 2
+                        </div>
+                        <div class="mb-3">
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                기업의 우량성은 수익성,수익의 안정성,
+                                기업 구조,수익의 성장성,회계적 우량성,배당,
+                                투자를 참고하여 파악하게 됩니다.
+                                이 지표들을 결합하여 수익성, 재무성과,
+                                운영 효율성으로 구분해 총 9개의 지표를
+                                세분화하여 전략을 세웠습니다.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Pricing card enterprise-->
+            <div class="col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <div class="small text-uppercase fw-bold">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            전략 3
+                        </div>
+                        <div class="mb-3">
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                좋은 기업을 싸게 사기 위해 여러가지 팩터 중 퀄리티,벨류 팩터를 결합하여 이율과 투하자본 수익률을 통해 전략을 세웠습니다.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5 border-bottom" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                <h2 class="h4 fw-bolder">전략 1</h2>
+                <p>VALUE</p>
+                <p>
+                <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">종목코드</th>
+                    <th scope="col">종목명</th>
+                    <th scope="col">순위</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#value}}
+                    <tr>
+                        <td>{{code}}</td>
+                        <td><a href="javascript:void(window.open('/api/posts/value/{{id}}/{{code}}', '{{name}} 상세정보', 'width=800, height=900, toolbar=no, menubar=no, scrollbars=yes, resizable=yes,status=yes'))">{{name}}</a></td>
+                        <td>{{rank}}</td>
+                    </tr>
+                {{/value}}
+                </tbody>
+                </table>
+                </p>
+                <a class="text-decoration-none" href="#!" id="valueGraph">
+                    종목전체 연도별 수익률
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                <h2 class="h4 fw-bolder">전략 2</h2>
+                <p>F_SCORE</p>
+                <p>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">종목코드</th>
+                        <th scope="col">종목명</th>
+                        <th scope="col">ROA</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#fscore}}
+                        <tr>
+                            <td>{{code}}</td>
+                            <td><a href="javascript:void(window.open('/api/posts/fscore/{{id}}/{{code}}', '{{name}} 상세정보', 'width=800, height=900, toolbar=no, menubar=no, scrollbars=yes, resizable=yes,status=yes'))">{{name}}</a></td>
+                            <td>{{roa}}</td>
+                        </tr>
+                    {{/fscore}}
+                    </tbody>
+                </table>
+                </p>
+                <a class="text-decoration-none" href="#!" id="fscoreGraph">
+                    종목전체 연도별 수익률
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                <h2 class="h4 fw-bolder">전략 3</h2>
+                <p>MAGIC</p>
+                <p>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">종목코드</th>
+                        <th scope="col">종목명</th>
+                        <th scope="col">ROA</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#magic}}
+                        <tr>
+                            <td>{{code}}</td>
+                            <td><a href="javascript:void(window.open('/api/posts/magic/{{id}}/{{code}}', '{{name}} 상세정보', 'width=800, height=900, toolbar=no, menubar=no, scrollbars=yes, resizable=yes,status=yes'))">{{name}}</a></td>
+                            <td>{{roa}}</td>
+                        </tr>
+                    {{/magic}}
+                    </tbody>
+                </table>
+                </p>
+                <a class="text-decoration-none" href="#!" id="magicGraph">
+                    종목전체 연도별 수익률
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5 border-bottom" id="growthGraph">
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">전략별 연도별 수익률</h2>
+            <br>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label>
+                    <button type="button" class="btn btn-danger" name="jb" id="2017" onclick="fn_ShowGraph(this.id);">2018년</button>
+                </label>
+                <label>
+                    <button type="button" class="btn btn-danger" name="jb" id="2018" onclick="fn_ShowGraph(this.id);">2019년</button>
+                </label>
+                <label>
+                    <button type="button" class="btn btn-danger" name="jb" id="2019" onclick="fn_ShowGraph(this.id);">2020년</button>
+                </label>
+                <label>
+                    <button type="button" class="btn btn-danger" name="jb" id="2020" onclick="fn_ShowGraph(this.id);">2021년</button>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-light py-5 border-bottom" id="stockInfo">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5" id = "stockGraph">
+
+        </div>
+        <div class= "row gx-5 justify-content-center" id = "stockCode">
+
+        </div>
+    </div>
+</section>
+
+<!--
+    <div class="right-box" id="graph1">
+        <ul>
+            <li>
+                <div style="float: left;">
+                    <img alt="2017" id="itemImg1">
+                </div>
+                <div style="float: left;">
+                    <p>2018년도 수익률</p>
+                </div>
+                <div style="float: none; clear: both;"></div>
+            </li>
+            <li>
+                <div style="float: left;">
+                    <img alt="2018" id="itemImg2">
+                </div>
+                <div style="float: left;">
+                    <p>2019년도 수익률</p>
+                </div>
+                <div style="float: none; clear: both;"></div>
+            </li>
+            <li>
+
+                <div style="float: left;">
+                    <img alt="2019" id="itemImg3">
+                </div>
+                <div style="float: left;">
+                    <p>2020년도 수익률</p>
+                </div>
+                <div style="float: none; clear: both;"></div>
+            </li>
+            <li><div style="float: left;">
+                <img alt="2021" id="itemImg4">
+            </div>
+                <div style="float: left;">
+                    <p>2021년도 수익률</p>
+                </div>
+                <div style="float: none; clear: both;"></div></li>
+        </ul>
+    </div>-->
+
+</div>
+
+{{>layout/footer}}
