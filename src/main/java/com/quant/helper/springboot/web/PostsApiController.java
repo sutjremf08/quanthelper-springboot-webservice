@@ -34,10 +34,13 @@ public class PostsApiController {
     @PostMapping("/api/vi/posts/graph/{value}/{code}")
     public String findGrowthByGraph(@PathVariable String code, @PathVariable String value) throws IOException, ParseException {
 
-        System.out.println(code + " :: " + value);
+        System.out.println(code);
         //종목별 그래프 호출용
-        String absolutePath = "/Users/donghokim/Downloads/json-result-chart/graph/"+value;
-        String filePath = absolutePath +"/result_"+code+".json";
+        String absolutePath = "/home/ec2-user/";
+        String filePath = absolutePath + "graph-file/"+value+"/result_"+code+".json";
+
+        //String absolutePath = "/Users/donghokim/Downloads/json-result-chart/graph/"+value;
+        //String filePath = absolutePath +"/result_"+code+".json";
 
 
         FileInputStream ins = new FileInputStream(filePath);   // ex) "c:\\\\data.json"
@@ -54,10 +57,12 @@ public class PostsApiController {
 
         System.out.println(code + " :: " + value);
         //연도별 그래프 호출용
-        String absolutePath = "/Users/donghokim/Downloads/json-result-chart/growth";
-        String filePath = absolutePath + "/"+value+"_"+code+".json";
+        String absolutePath = "/home/ec2-user/";
+        String filePath = absolutePath + "strategy_result_json/"+value+"_"+code+".json";
 
-        System.out.println(code + " asda ");
+        //String absolutePath = "/Users/donghokim/Downloads/json-result-chart/growth";
+       // String filePath = absolutePath + "/"+value+"_"+code+".json";
+
 
         FileInputStream ins = new FileInputStream(filePath);   // ex) "c:\\\\data.json"
         InputStreamReader inr = new InputStreamReader(ins, "UTF-8");
@@ -83,8 +88,11 @@ public class PostsApiController {
         DatePath datePath = new DatePath();
         datePath.setQuarterPath();
 
-        String absolutePath = "/Users/donghokim/Downloads/json-result-chart/fscore/";
-        String filePath = absolutePath + "/"+datePath.getPath()+"/"+code+".json";
+
+        String absolutePath = "/home/ec2-user/";
+        String filePath = absolutePath + "json-result-chart/fscore/"+datePath.getPath()+"/"+code+".json";
+        //String absolutePath = "/Users/donghokim/Downloads/json-result-chart/fscore/";
+       // String filePath = absolutePath + "/"+datePath.getPath()+"/"+code+".json";
 
 
         FileInputStream ins = new FileInputStream(filePath);   // ex) "c:\\\\data.json"
@@ -111,11 +119,10 @@ public class PostsApiController {
         DatePath datePath = new DatePath();
         datePath.setQuarterPath();
 
-        System.out.println(datePath.getPath());
-        //String absolutePath = "/home/ec2-user/app/diq";
-        //String filePath = absolutePath + "/data/" + datePath.getPath() + "/fscore.json";
-        String absolutePath = "/Users/donghokim/Downloads/json-result-chart/growth/";
-        String filePath = absolutePath + "/fscore_2020.json";
+        String absolutePath = "/home/ec2-user/";
+        String filePath = absolutePath + "/json-file/fscore_"+datePath.getPath()+".json";
+        //String absolutePath = "/Users/donghokim/Downloads/json-result-chart/growth/";
+        //String filePath = absolutePath + "/fscore_2020.json";
 
         List<FScoreDataRequestDto> fScoreDataRequestList = objectFScoreMapper.readValue(new File(filePath),
                 new TypeReference<List<FScoreDataRequestDto>>() {
@@ -143,8 +150,10 @@ public class PostsApiController {
         System.out.println(code);
         DatePath datePath = new DatePath();
         datePath.setQuarterPath();
-        String absolutePath = "/Users/donghokim/Downloads/json-result-chart/magic";
-        String filePath = absolutePath + "/"+datePath.getPath()+"/"+code+".json";
+        String absolutePath = "/home/ec2-user/";
+        String filePath = absolutePath + "json-result-chart/magic/"+datePath.getPath()+"/"+code+".json";
+        //String absolutePath = "/Users/donghokim/Downloads/json-result-chart/magic";
+        //String filePath = absolutePath + "/"+datePath.getPath()+"/"+code+".json";
 
 
         FileInputStream ins = new FileInputStream(filePath);   // ex) "c:\\\\data.json"
@@ -166,10 +175,10 @@ public class PostsApiController {
         DatePath datePath = new DatePath();
         datePath.setQuarterPath();
 
-        //String absolutePath = "/home/ec2-user/app/diq";
-        //String filePath = absolutePath + "/data/" + datePath.getPath() + "/fscore.json";
-        String absolutePath = "/Users/donghokim/Downloads/json-result-chart/growth";
-        String filePath = absolutePath + "/magic_2020.json";
+        String absolutePath = "/home/ec2-user/";
+        String filePath = absolutePath + "/json-file/magic_"+datePath.getPath()+".json";
+        //String absolutePath = "/Users/donghokim/Downloads/json-result-chart/growth";
+        //String filePath = absolutePath + "/magic_2020.json";
 
         List<MagicDataRequestDto> magicDataRequestList = objectMagicMapper.readValue(new File(filePath),
                 new TypeReference<List<MagicDataRequestDto>>() {
@@ -196,8 +205,11 @@ public class PostsApiController {
         System.out.println(code);
         DatePath datePath = new DatePath();
         datePath.setQuarterPath();
-        String absolutePath = "/Users/donghokim/Downloads/json-result-chart/value";
-        String filePath = absolutePath + "/"+datePath.getPath()+"/"+code+".json";
+
+        String absolutePath = "/home/ec2-user/";
+        String filePath = absolutePath + "json-result-chart/value/"+datePath.getPath()+"/"+code+".json";
+       //String absolutePath = "/Users/donghokim/Downloads/json-result-chart/value";
+        //String filePath = absolutePath + "/"+datePath.getPath()+"/"+code+".json";
 
 
         FileInputStream ins = new FileInputStream(filePath);   // ex) "c:\\\\data.json"
@@ -218,10 +230,10 @@ public class PostsApiController {
         DatePath datePath = new DatePath();
         datePath.setQuarterPath();
 
-        //String absolutePath = "/home/ec2-user/app/diq";
-        //String filePath = absolutePath + "/data/" + datePath.getPath() + "/value.json";
-        String absolutePath = "/Users/donghokim/Downloads/json-result-chart/growth";
-        String filePath = absolutePath + "/value_2020.json";
+        String absolutePath = "/home/ec2-user/";
+        String filePath = absolutePath + "/json-file/value_"+datePath.getPath()+".json";
+        //String absolutePath = "/Users/donghokim/Downloads/json-result-chart/growth";
+        //String filePath = absolutePath + "/value_2020.json";
 
         List<ValueDataRequestDto> valueDataRequestList = objectValueMapper.readValue(new File(filePath),
                 new TypeReference<List<ValueDataRequestDto>>() {
