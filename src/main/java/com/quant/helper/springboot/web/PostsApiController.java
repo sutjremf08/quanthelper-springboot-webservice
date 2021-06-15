@@ -110,7 +110,7 @@ public class PostsApiController {
     }
 
 
-    @Scheduled(cron = "0 0/1 * * * ?", zone = "Asia/Seoul")
+    @Scheduled(cron = "0 0/30 * * * ?", zone = "Asia/Seoul")
     public ResponseEntity<String> bulkFSCoreUpdate()
             throws JsonParseException, JsonMappingException, IOException {
 
@@ -166,7 +166,7 @@ public class PostsApiController {
     }
 
 
-    @Scheduled(cron = "0 0/1 * * * ?", zone = "Asia/Seoul")
+    @Scheduled(cron = "0 0/30 * * * ?", zone = "Asia/Seoul")
     public ResponseEntity<String> bulkMagicUpdate()
             throws JsonParseException, JsonMappingException, IOException {
 
@@ -221,7 +221,7 @@ public class PostsApiController {
         return strJson;
     }
 
-    @Scheduled(cron = "0 0/1 * * * ?", zone = "Asia/Seoul")
+    @Scheduled(cron = "0 0/30 * * * ?", zone = "Asia/Seoul")
     public ResponseEntity<String> bulkValueUpdate()
             throws JsonParseException, JsonMappingException, IOException {
 
