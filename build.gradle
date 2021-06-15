@@ -4,7 +4,6 @@ buildscript {
     }
     repositories {
         mavenCentral()
-        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -17,11 +16,10 @@ apply plugin: 'io.spring.dependency-management'
 
 group 'com.quant.helper'
 version '1.0-SNAPSHOT'
-sourceCompatibility = 11
+sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
